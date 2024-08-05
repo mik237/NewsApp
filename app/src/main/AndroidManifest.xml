@@ -29,18 +29,18 @@
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Starting.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
             android:name=".practice_navigation.NavigationPracticeActivity"
             android:exported="true"
             android:theme="@style/Theme.Starting.App">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
