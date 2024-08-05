@@ -55,3 +55,12 @@ jobs:
       with:
         name: Debug-APK
         path: app/build/outputs/apk/debug/app-debug.apk
+
+    - name: Upload to testapp.io
+      env:
+        TESTAPP_API_KEY: ${{ secrets.TESTAPP_API_KEY }}
+      run: |
+        curl -F "file=@app/build/outputs/apk/debug/app-debug.apk" \
+             -F "token=${{ secrets.TESTAPP_API_KEY }}" \
+             -F "release_notes=Automated upload from GitHub Actions" \
+             https://api.testapp.io/api/upload
