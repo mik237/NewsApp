@@ -28,7 +28,7 @@ import com.loc.newsapp.presentation.Dimens.ExrtaSmallPadding
 import com.loc.newsapp.presentation.Dimens.MediumPadding1
 import com.loc.newsapp.ui.theme.NewsAppTheme
 
-@SuppressLint("ModifierFactoryUnreferencedReceiver")
+/*@SuppressLint("ModifierFactoryUnreferencedReceiver")
 fun Modifier.shimmerEffect() = composed {
     val transition = rememberInfiniteTransition(label = "")
     val alpha = transition.animateFloat(
@@ -40,7 +40,7 @@ fun Modifier.shimmerEffect() = composed {
         ), label = ""
     ).value
     background(color = colorResource(id = R.color.shimmer).copy(alpha = alpha))
-}
+}*/
 
 
 @Composable
@@ -48,8 +48,8 @@ fun ArticleCardShimmerEffect(modifier: Modifier = Modifier) {
     Row(modifier = modifier) {
         Box(
             modifier = Modifier
-                .size(ArticleCardSize)
-                .shimmerEffect(),
+                .size(ArticleCardSize)/*
+                .shimmerEffect()*/,
         )
 
         Column(
@@ -63,7 +63,7 @@ fun ArticleCardShimmerEffect(modifier: Modifier = Modifier) {
                     .padding(horizontal = MediumPadding1)
                     .fillMaxWidth()
                     .height(30.dp)
-                    .shimmerEffect()
+//                    .shimmerEffect()
             )
 
             Box(
@@ -71,7 +71,7 @@ fun ArticleCardShimmerEffect(modifier: Modifier = Modifier) {
                     .padding(horizontal = MediumPadding1)
                     .fillMaxWidth(0.5f)
                     .height(15.dp)
-                    .shimmerEffect()
+//                    .shimmerEffect()
             )
 
         }

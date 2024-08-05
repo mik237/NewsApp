@@ -57,8 +57,7 @@ fun SearchBar(
         val containerColor = colorResource(id = R.color.input_background)
         TextField(
             modifier = Modifier
-                .fillMaxWidth()
-                .searchBarBorder(),
+                .fillMaxWidth(),
             value = text,
             onValueChange = onValueChanged,
             readOnly = readOnly,
@@ -101,7 +100,7 @@ fun SearchBar(
     }
 }
 
-fun Modifier.searchBarBorder() = composed {
+/*fun Modifier.searchBarBorder() = composed {
     if (!isSystemInDarkTheme()) {
         border(
             width = 1.dp, color = Color.Black,
@@ -110,7 +109,7 @@ fun Modifier.searchBarBorder() = composed {
     } else {
         this
     }
-}
+}*/
 
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
