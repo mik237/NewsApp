@@ -56,11 +56,13 @@ jobs:
         name: Debug-APK
         path: app/build/outputs/apk/debug/app-debug.apk
 
-    - name: Upload to testapp.io
-      env:
-        TESTAPP_API_KEY: ${{ secrets.TESTAPP_API_KEY }}
-      run: |
-        curl -F "file=@app/build/outputs/apk/debug/app-debug.apk" \
-             -F "token=${{ secrets.TESTAPP_API_KEY }}" \
-             -F "release_notes=Automated upload from GitHub Actions" \
-             https://api.testapp.io/api/upload
+    - name: Upload APK TestApp.io
+      uses: testappio/github-action@v5
+      with:
+        api_token: ${{secrets.TESTAPPIO_API_TOKEN}}
+        app_id: ${{secrets.TESTAPPIO_APP_ID}}
+        file: app/build/outputs/apk/debug/app-debug.apk
+        release_notes: "NewsApp v1.0 uplaoded as testing CI/CD"
+        git_release_notes: true
+        include_git_commit_id: false
+        notify: true
