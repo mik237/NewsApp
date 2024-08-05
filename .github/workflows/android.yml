@@ -59,8 +59,8 @@ jobs:
     - name: Upload APK TestApp.io
       uses: testappio/github-action@v5
       with:
-        api_token: ${{secrets.TESTAPPIO_API_TOKEN}}
-        app_id: ${{secrets.TESTAPPIO_APP_ID}}
+        api_token: ${{secrets.TESTAPP_API_TOKEN}}
+        app_id: ${{secrets.TESTAPP_API_ID}}
         file: app/build/outputs/apk/debug/app-debug.apk
         release_notes: "NewsApp v1.0 uplaoded as testing CI/CD"
         git_release_notes: true
